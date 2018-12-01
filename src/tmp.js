@@ -1,9 +1,6 @@
 const fastify = require("fastify")({
   logger: true
 });
-const result = fastify.get("/", function(request, reply) {
-  reply.send({ hello: "world" });
-});
 fastify.register(require("./ExamplePlugin.bs.js").plugin);
 fastify.listen(3000, function(err, address) {
   if (err) {

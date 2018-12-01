@@ -1,5 +1,5 @@
 {
-  "name": "fastify-with-reason",
+  "name": "example-app",
   "version": "0.1.0",
   "sources": {
     "dir": "src",
