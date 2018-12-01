@@ -1,4 +1,7 @@
 type error;
+type listenResponse =
+  | ListenSuccess(string)
+  | ListenError(error);
 [@bs.deriving abstract]
 type fastifyLogger = {
   info: string => unit,
@@ -26,15 +29,28 @@ type plugin = (server, unit, next) => unit;
 external __listen:
   (server, int, (Js.Nullable.t(error), string) => unit) => unit =
   "listen";
-[@bs.module] external createServer: serverOptions => server = "fastify";
-
-let listen = (server: server, port: int, callback) =>
-  server->__listen(port, (error, address) =>
-    callback(Js.Nullable.toOption(error), address)
-  );
+[@bs.module] external __createServer: serverOptions => server = "fastify";
 
 let logError = (server: server, error: error) =>
   __logError(server->logGet, error);
 
 let logInfo = (server: server, message: string) =>
   __logInfo(server->logGet, message);
+
+let createServer = (~logger: bool) => {
+  let options = serverOptions(~logger);
+  __createServer(options);
+};
+
+let listen = (server: server, port: int, callback) =>
+  server->__listen(
+    port,
+    (error, address) => {
+      let result =
+        switch (Js.Nullable.toOption(error)) {
+        | Some(error) => ListenError(error)
+        | None => ListenSuccess(address)
+        };
+      callback(result);
+    },
+  );

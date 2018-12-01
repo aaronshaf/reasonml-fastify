@@ -1,13 +1,12 @@
 open Fastify;
-let options = serverOptions(~logger=true);
-let app = createServer(options);
+let app = createServer(~logger=true);
 app->get("/", Foo.handler);
 app->register(Bar.plugin);
-app->listen(3000, (error, _address) =>
-  switch (error) {
-  | Some(error) =>
+app->listen(3000, result =>
+  switch (result) {
+  | ListenSuccess(_address) => () /* fastify already logs success */
+  | ListenError(error) =>
     app->logError(error);
     Node.Process.exit(1);
-  | None => () /* success */
   }
 );
