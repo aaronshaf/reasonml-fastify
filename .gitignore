@@ -4,5 +4,9 @@
 npm-debug.log
 /lib/bs/
 /node_modules/
-lib
+/lib
 *.bs.js
+NOTES.md
+package-lock.json
+TODO.md
+.cache

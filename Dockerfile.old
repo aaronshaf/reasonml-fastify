@@ -1,0 +1,12 @@
+FROM node:10
+# USER root
+RUN apt-get update
+RUN apt-get install make build-essential -y
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install bs-platform --unsafe-perm
+RUN npm install
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD [ "npm", "start" ]

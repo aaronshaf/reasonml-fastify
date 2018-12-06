@@ -1,11 +1,11 @@
 open Fastify;
 let app = createServer(~logger=true);
 app->get("/", Foo.handler);
-app->register(Bar.plugin);
+app->post("/", Bar.handler);
 app->listen(3000, result =>
   switch (result) {
-  | ListenSuccess(_address) => ()
-  | ListenError(error) =>
+  | Ok(_address) => ()
+  | Error(error) =>
     app->logError(error);
     Node.Process.exit(1);
   }

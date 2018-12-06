@@ -1,7 +1,4 @@
 type error;
-type listenResponse =
-  | ListenSuccess(string)
-  | ListenError(error);
 [@bs.deriving abstract]
 type fastifyLogger = {
   info: string => unit,
@@ -14,43 +11,43 @@ type serverOptions = {logger: bool};
 type request;
 type reply;
 type handler = (request, reply) => unit;
-type schema =
-  | None
-  | Some(string);
-type options = {schema};
-type next = unit => unit;
-type plugin = (server, unit, next) => unit;
+type plugin = (server, unit, next) => unit
+and next = unit => unit;
 [@bs.send] external send: (reply, string) => unit = "";
-[@bs.send] external __logError: (fastifyLogger, error) => unit = "error";
-[@bs.send] external __logInfo: (fastifyLogger, string) => unit = "info";
 [@bs.send] external register: (server, plugin) => unit = "";
 [@bs.send] external get: (server, string, handler) => unit = "";
-[@bs.send]
-external __listen:
-  (server, int, (Js.Nullable.t(error), string) => unit) => unit =
-  "listen";
-[@bs.module] external __createServer: serverOptions => server = "fastify";
+/* type postOptions = {. "schema": Js.Json.t}; */
 
+[@bs.send] external __logError: (fastifyLogger, error) => unit = "error";
 let logError = (server: server, error: error) =>
   __logError(server->logGet, error);
 
+[@bs.send] external __logInfo: (fastifyLogger, string) => unit = "info";
 let logInfo = (server: server, message: string) =>
   __logInfo(server->logGet, message);
 
+[@bs.module] external __createServer: serverOptions => server = "fastify";
 let createServer = (~logger: bool) => {
   let options = serverOptions(~logger);
   __createServer(options);
 };
 
+[@bs.send]
+external __listen:
+  (server, int, string, (Js.Nullable.t(error), string) => unit) => unit =
+  "listen";
 let listen = (server: server, port: int, callback) =>
-  server->__listen(
-    port,
-    (error, address) => {
-      let result =
-        switch (Js.Nullable.toOption(error)) {
-        | Some(error) => ListenError(error)
-        | None => ListenSuccess(address)
-        };
-      callback(result);
-    },
-  );
+  server->__listen(port, "0.0.0.0", Utils.useResult(callback));
+
+type postRequest = {body: Js.Json.t};
+type postHandler = (postRequest, reply) => unit;
+
+let prepareHandler = (handler: postHandler, _request, reply) => {
+  let request = {body: [%raw "_request"]};
+  handler(request, reply);
+};
+
+[@bs.send] external __post: (server, string, postHandler) => unit = "post";
+let post = (server: server, path: string, handler: postHandler) =>
+  /* let options: postOptions = {"schema": schema}; */
+  __post(server, path, prepareHandler(handler));
