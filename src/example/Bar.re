@@ -1,14 +1,10 @@
 open Fastify;
+let stringifyParseError = Decode.ParseError.failureToDebugString;
 
 let handler = (request, reply) =>
   switch (request.body->Thing.toRecord) {
-  | Ok(thing) =>
-    switch (Js.Json.stringifyAny(thing->Thing.toJs)) {
-    | Some(thingJson) => reply->send(thingJson)
-    | None => reply->send("Error")
-    }
-  | Error(error) =>
-    reply->send(Decode.ParseError.failureToDebugString(error))
+  | Ok(thing) => reply->send(thing->Thing.toJs->Js.Json.stringify)
+  | Error(error) => reply->send(stringifyParseError(error))
   };
 
 let plugin = (app, _options, next) => {
