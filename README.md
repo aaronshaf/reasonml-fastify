@@ -1,10 +1,3 @@
-```
-_______________________
-< fastify with reason >
- ----------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-```
+![Logo](Reasonfastify.png)
+
+This is the [ReasonML](https://reasonml.github.io/) version of [Fastify](https://www.fastify.io/)
