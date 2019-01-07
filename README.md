@@ -1,3 +1,3 @@
-![alt text] (https://github.com/aaronshaf/reasonml-fastify/blob/develop/Reasonfastify.png "Logo")
+![Logo](Reasonfastify.png)
 
 This is the [ReasonML](https://reasonml.github.io/) version of [Fastify](https://www.fastify.io/)
