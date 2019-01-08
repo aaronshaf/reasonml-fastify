@@ -1,5 +1,6 @@
 {
   "name": "fastify-with-reason",
+  "description": "Fastify bindings in Reason",
   "version": "0.1.0",
   "scripts": {
     "start": "node src/example/App.bs.js",
@@ -9,10 +10,19 @@
     "predeploy": "./predeploy.sh"
   },
   "keywords": [
-    "BuckleScript"
+    "BuckleScript",
+    "ReasonML",
+    "Fastify",
+    "Web",
+    "Node",
+    "Server"
   ],
-  "author": "",
+  "author": "Aaron Shafovaloff <aaronshaf@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aaronshaf/reasonml-fastify/issues"
+  },
+  "homepage": "https://github.com/aaronshaf/reasonml-fastify#readme",
   "devDependencies": {
     "bs-platform": "^4.0.8"
   },
