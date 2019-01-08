@@ -5,9 +5,9 @@
 ## Getting Started
 Install reasonml-fastify using npm:
 ```
-yarn add reasonml-fastify
+yarn add fastify-with-reason
 ```
 
-Then add reasonml-fastify as a dependency to `bsconfig.json`
+Then add fastify-with-reason as a dependency to `bsconfig.json`
 
 Go to [Wiki](https://github.com/aaronshaf/reasonml-fastify/wiki) for documentation (coming soon)
