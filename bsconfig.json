@@ -1,19 +1,14 @@
 {
-  "name": "example-app",
-  "version": "0.1.0",
+  "name": "fastify-with-reason",
+  "bsc-flags": [
+    "-bs-super-errors"
+  ],
   "sources": {
     "dir": "src",
     "subdirs": true
   },
-  "package-specs": {
-    "module": "commonjs",
-    "in-source": true
-  },
-  "suffix": ".bs.js",
-  "bs-dependencies": ["bs-decode"],
-  "warnings": {
-    "error": "+101"
-  },
-  "namespace": true,
+  "bs-dev-dependencies": [
+    "bs-decode"
+  ],
   "refmt": 3
 }
