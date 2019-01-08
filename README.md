@@ -1,9 +1,9 @@
-![Logo](Reasonfastify.png)
+![Logo](https://raw.githubusercontent.com/aaronshaf/reasonml-fastify/master/Reasonfastify.png)
 
 [Fastify](https://www.fastify.io/) bindings for [BuckleScript](https://github.com/bloomberg/bucklescript) in [ReasonML](https://reasonml.github.io/) 
 
 ## Getting Started
-Install reasonml-fastify using npm:
+Install fastify-with-reason using npm:
 ```
 yarn add fastify-with-reason
 ```
