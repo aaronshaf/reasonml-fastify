@@ -75,10 +75,10 @@ bs-nonempty@^1.3.0:
   dependencies:
     bs-abstract "^0.16.0"
 
-bs-platform@^4.0.8:
-  version "4.0.17"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-4.0.17.tgz#41458e74c101f7ac97eba723660971a42f0c5e65"
-  integrity sha512-ypn2VEAmuVgX+ezKF9HXXzZ9Fe47UMPyt0x9MBBAF/C0Fus9wEIOdRD0gB4p3J9uLabB/MRWWuw7ORnP8w086g==
+bs-platform@^4.0.18:
+  version "4.0.18"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-4.0.18.tgz#d17b8693ba1f714d9b27e0ddb365f2069ba4b8a0"
+  integrity sha512-BwzW0iYHvREqUZIgQxJmdJrxexppLvJxYQ4LLexbhCp7uZU5DIZ5ub4ZHpkCkc8fn8bsXWc+Rrejb3csi+BoAQ==
 
 chalk@^2.4.1:
   version "2.4.2"
@@ -163,10 +163,10 @@ fast-safe-stringify@^1.0.8, fast-safe-stringify@^1.2.3:
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-1.2.3.tgz#9fe22c37fb2f7f86f06b8f004377dbf8f1ee7bc1"
   integrity sha512-QJYT/i0QYoiZBQ71ivxdyTqkwKkQ0oxACXHYxH2zYHJEgzi2LsbjgvtzTbLi1SZcF190Db2YP7I7eTsU2egOlw==
 
-fastify@^1.13.1:
-  version "1.13.3"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-1.13.3.tgz#989d3ad2080d3b929fd979d0acc2eabaebf9b81d"
-  integrity sha512-9sqJoz3V/s9Ax6Y9dhiDvp8cQoiAJnjVIunTb/Rd96wVUMGOPsROno7KD0hCUwBdJbp3fLWm+c2ssbgDdNJDyw==
+fastify@^1.13.4:
+  version "1.13.4"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-1.13.4.tgz#a48a1244921c2d4fb092f6ee419be18c3483df1a"
+  integrity sha512-3L791cNhfhbh5erCUnHLxCcUeHcgO8yPoN0QRvzaA/5wSSnYcjm9n+ewFsXTnwJoVidmoUqnjgmTPqUpIXoeYg==
   dependencies:
     "@types/pino" "^4.16.0"
     abstract-logging "^1.0.0"

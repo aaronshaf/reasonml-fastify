@@ -3,12 +3,24 @@
   "bsc-flags": [
     "-bs-super-errors"
   ],
-  "sources": {
-    "dir": "src",
-    "subdirs": true
+  "sources": [
+    "src",
+    {
+      "dir": "example",
+      "type": "dev"
+    }
+  ],
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "warnings": {
+    "error": "+101"
   },
   "bs-dev-dependencies": [
     "bs-decode"
   ],
+  "namespace": false,
   "refmt": 3
 }

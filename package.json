@@ -25,11 +25,11 @@
   },
   "homepage": "https://github.com/aaronshaf/reasonml-fastify#readme",
   "devDependencies": {
-    "bs-platform": "^4.0.8"
+    "bs-platform": "^4.0.18"
   },
   "dependencies": {
     "@aaronshaf/bs-js": "^1.0.1",
-    "fastify": "^1.13.1",
+    "fastify": "^1.13.4",
     "bs-decode": "^0.3.3"
   }
 }
