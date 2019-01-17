@@ -1,8 +1,8 @@
-
-![](https://img.shields.io/npm/v/fastify-with-reason.svg?style=plastic) ![](https://img.shields.io/github/license/aaronshaf/reasonml-fastify.svg?style=plastic) 
 ![Logo](https://raw.githubusercontent.com/aaronshaf/reasonml-fastify/master/Reasonfastify.png)
 
 [Fastify](https://www.fastify.io/) bindings for [BuckleScript](https://github.com/bloomberg/bucklescript) in [ReasonML](https://reasonml.github.io/) 
+
+![](https://img.shields.io/npm/v/fastify-with-reason.svg?style=plastic) ![](https://img.shields.io/github/license/aaronshaf/reasonml-fastify.svg?style=plastic) 
 
 ## Getting Started
 Install fastify-with-reason using npm:
