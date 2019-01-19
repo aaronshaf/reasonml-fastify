@@ -19,7 +19,14 @@
     "Server"
   ],
   "author": "Aaron Shafovaloff <aaronshaf@gmail.com>",
+  "contributors": [
+    "Massimiliano Bertinetti <acciaiodigitale@gmail.com>"
+  ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaronshaf/reasonml-fastify"
+  },
   "bugs": {
     "url": "https://github.com/aaronshaf/reasonml-fastify/issues"
   },
